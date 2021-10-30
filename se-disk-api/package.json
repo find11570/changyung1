@@ -2,14 +2,17 @@
   "name": "se-disk-api",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec babel-node src/app.js",
+    "start": "node build/app.js",
+    "prestart": "npm run build",
+    "build": "babel src --out-dir build",
+    "prebuild": "rm -rf build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime": "^7.16.0",
     "argon2": "^0.28.2",
     "body-parser": "^1.19.0",
     "celebrate": "^15.0.0",
@@ -31,6 +34,7 @@
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
     "@babel/node": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.16.0",
     "@babel/preset-env": "^7.15.8"
   }
 }
