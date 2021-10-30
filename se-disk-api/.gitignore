@@ -1,5 +1,4 @@
-package-lock.json
-src/config/
+src/config/config.json
 
 # Logs
 logs
